@@ -5,3 +5,4 @@ profile of python programs
 
 * [systemtap-python-tools](https://github.com/emfree/systemtap-python-tools)
 * [pyflame](https://github.com/uber/pyflame)
+* [pyinstrument](https://github.com/joerick/pyinstrument)
