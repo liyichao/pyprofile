@@ -13,14 +13,20 @@ read_times = 1
 
 def f():
     for i in range(read_times):
-        response = urllib2.urlopen('http://www.baidu.com', timeout=10)
-    return response
+        response = urllib2.urlopen('http://www.google.com', timeout=10)
+    j = 0
+    for i in range(1000):
+        j += 1
+    return j
 
 
 def g():
     for i in range(2 * read_times):
-        response = urllib2.urlopen('http://www.baidu.com', timeout=10)
-    return response
+        response = urllib2.urlopen('http://www.google.com', timeout=10)
+    j = 0
+    for i in range(1000):
+        j += 1
+    return j
 
 
 def application(env, start_response):
