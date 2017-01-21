@@ -3,6 +3,8 @@
 """WSGI server example"""
 from __future__ import print_function
 from gevent.pywsgi import WSGIServer
+from gevent import monkey
+monkey.patch_all()
 import urllib2
 
 read_times = 1
