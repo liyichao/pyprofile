@@ -2,12 +2,14 @@
 # coding: utf-8
 
 import threading
+import time
 
 
 def g():
     j = 0
     for i in range(100):
         j += 1
+    time.sleep(0.1)
     return j
 
 
