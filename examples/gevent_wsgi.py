@@ -5,6 +5,7 @@ from __future__ import print_function
 from gevent.pywsgi import WSGIServer
 from gevent import monkey
 monkey.patch_all()
+import gevent
 import urllib2
 
 read_times = 1
@@ -24,8 +25,10 @@ def g():
 
 def application(env, start_response):
     if env['PATH_INFO'] == '/':
-        f()
-        g()
+        foo_greenlet = gevent.spawn(f)
+        bar_greenlet = gevent.spawn(g)
+        foo_greenlet.join()
+        bar_greenlet.join()
         start_response('200 OK', [('Content-Type', 'text/html')])
         return [b"<b>hello world</b>"]
     else:

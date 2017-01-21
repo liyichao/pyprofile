@@ -6,6 +6,6 @@ set -e
 
 trap 'kill $(jobs -p)' EXIT
 
-python $1 &
+venv/bin/python $1 &
 PID=$!
 ../systemtap-python-tools/scripts/sample -t $duration -x $PID | ../FlameGraph/flamegraph.pl --colors=java > perf.svg
