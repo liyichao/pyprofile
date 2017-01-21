@@ -11,6 +11,7 @@ setup(
     packages=['pyprofile'],
     install_requires='''
         gevent
+        numpy
     ''',
     entry_points='''
     [console_scripts]
